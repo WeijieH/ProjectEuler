@@ -12,7 +12,7 @@ def get_score(word, first_character):
     offect = ord(first_character)
     return sum(map(lambda x: ord(x) - offect + 1, list(word)))
 
-with open('p022_names.txt') as f:
+with open('.\Data\p022_names.txt') as f:
     names = f.readlines()[0].replace('\"','')    
     name_array = np.sort(np.array(names.split(',')))
     result = 0

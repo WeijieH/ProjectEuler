@@ -31,7 +31,7 @@ NOTE: As there are only 16384 routes, it is possible to solve this problem by tr
 
 import numpy as np
 
-with open('p067_triangle.txt') as f:
+with open('.\Data\p067_triangle.txt') as f:
     lines = f.readlines()
     s = len(lines)
     data = np.zeros((s, s), dtype=np.int)
