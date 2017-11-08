@@ -15,18 +15,18 @@ from sympy import primerange
 def binary_search(array, target):
     lower = 0
     upper = len(array)
-    while lower < upper:   # use < instead of <=
+    while lower < upper:   
         x = lower + (upper - lower) // 2
         val = array[x]
         if target == val:
             return x
         elif target > val:
-            if lower == x:   # this two are the actual lines
-                break        # you're looking for
+            if lower == x:   
+                break        
             lower = x
         elif target < val:
             upper = x
-    return -1
+    return -x
 
 
 limit = 1000000
@@ -35,8 +35,9 @@ accumulated_sum = [2]
 for i in range(1, len(primes)):
     accumulated_sum.append(accumulated_sum[-1] + primes[i])
 
-s = 0
-count = 1
 consecutive_prime_sum = {}
+for i in range(len(accumulated_sum)):
+    max_prime_to_search = limit - accumulated_sum[i]
+    
 
 print(consecutive_prime_sum)
