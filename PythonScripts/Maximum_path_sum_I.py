@@ -45,3 +45,4 @@ with open('.\Data\p067_triangle.txt') as f:
             data[y, x] += max(data[y + 1, x], data[y + 1, x + 1])
 
     print(data[0][0])
+
