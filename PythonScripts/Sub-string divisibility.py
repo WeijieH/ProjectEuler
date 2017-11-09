@@ -15,6 +15,9 @@ Find the sum of all 0 to 9 pandigital numbers with this property.
 
 
 def find_next_permutation(number):
+    '''
+    https://www.nayuki.io/page/next-lexicographical-permutation-algorithm
+    '''
     l = len(number)
     low = l - 1
     while low > 0:
