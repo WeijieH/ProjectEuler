@@ -16,23 +16,26 @@ Find the first four consecutive integers to have four distinct prime factors eac
 
 from sympy import primerange
 
-limit = 1000000
+limit = 100000
 
 primes = list(primerange(0,limit))
 
 def get_distinct_prime_factors(n, primes):
-    result = 0
-    maxP = n // 2
+    result = 1
     for p in primes:
-        if p > maxP:
+        if p * p > n:
             break
-        if n % p == 0:
+        f = False
+        while n % p == 0:
+            f = True
+            n = n // p
+        if f:
             result += 1
     return result
 
 count = 0
 target = 4
-for n in range(647, limit):
+for n in range(647, 2*limit):
     f = get_distinct_prime_factors(n, primes)
     if f == target:
         count += 1
@@ -41,4 +44,3 @@ for n in range(647, limit):
             break
     else:
         count = 0
-    
