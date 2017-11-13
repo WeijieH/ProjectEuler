@@ -14,11 +14,11 @@ Find the first four consecutive integers to have four distinct prime factors eac
 '''
 
 
-from sympy import primerange
+import primesieve 
 
 limit = 100000
 
-primes = list(primerange(0,limit))
+primes = primesieve.primes(limit)
 
 def get_distinct_prime_factors(n, primes):
     result = 1
