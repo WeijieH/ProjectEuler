@@ -10,25 +10,25 @@ def isPermutation(number1, number2):
     s2 = str(number2)
     if len(s1) != len(s2):
         return False
-    return sorted(s1) == sorted(s2)
+    else:
+        return sorted(s1) == sorted(s2)
 
 
-i = 406
+start = 406
+i = start
 cubes = []
 result = {}
 found = False
 while not found:
     c = i ** 3
     result[c] = 1
-    cubes.append(c)
     for cube in cubes:
-        if cube == c:
-            continue
         if isPermutation(c, cube):
             result[cube] += 1
             if result[cube] == 5:
                 print('Stopped at: {0}'.format(i))
-                print('{0}:{1}'.format(cubes.index(cube) + 406, cube))
+                print('{0}:{1}'.format(cubes.index(cube) + start, cube))
                 found = True
             break
+    cubes.append(c)
     i += 1
